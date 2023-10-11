@@ -1,0 +1,22 @@
+
+<div class="img-container">
+  <img src={{imgpoke}} width="400" alt="">
+</div>
+<div class="card">
+  <input type="text" (input) = "getPokemon($any($event.target).value)" placeholder="pesquise aqui o nome do pokemon"/>
+
+  <div class="card-title">
+    <h3 *ngFor = "let snome of pokemon.types"
+    >{{ pokemon.name }}</h3>
+  </div>
+  <div class="card-body">
+    <img [src]= "pokemon.sprites.front_default" alt="pokemon" />
+  </div>
+  <div class="card-stats">
+    <span 
+    *ngFor="let t of pokemon.types" 
+    class="card-attribute">
+      {{ t.type.name }}
+    </span>
+  </div>
+</div>
